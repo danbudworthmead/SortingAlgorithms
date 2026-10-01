@@ -2,7 +2,7 @@
 
 #include "BubbleSort.h"
 
-TEST_CASE("Basic test")
+TEST_CASE("Bubble")
 {
     auto bubble = BubbleSort({ 5, 4, 3, 2, 1 });
     auto result = bubble.Sort();
