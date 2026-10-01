@@ -3,17 +3,18 @@
 
 #include "Bubble.h"
 #include "Insertion.h"
+#include "Selection.h"
 
 using namespace std;
 namespace
 {
     vector<int> GetRandomList()
     {
-        const int len = rand() % 100;
+        const int len = rand() % 1000;
         vector<int> result(len);
         for (int i = 0; i < len; ++i)
         {
-            result[i] = rand() % 100;
+            result[i] = rand() % 1000;
         }
         return result;
     }
@@ -37,5 +38,13 @@ TEST_CASE("Insertion")
     const vector<int> list = GetRandomList();
     Insertion insertion(list);
     vector<int> result = insertion.Sort();
+    REQUIRE(ranges::is_sorted(result));
+}
+
+TEST_CASE("Selection")
+{
+    const vector<int> list = GetRandomList();
+    Selection selection(list);
+    vector<int> result = selection.Sort();
     REQUIRE(ranges::is_sorted(result));
 }
