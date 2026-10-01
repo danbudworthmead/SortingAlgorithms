@@ -3,6 +3,7 @@
 
 #include "Bubble.h"
 #include "Insertion.h"
+#include "Merge.h"
 #include "Selection.h"
 
 using namespace std;
@@ -45,6 +46,14 @@ TEST_CASE("Selection")
 {
     const vector<int> list = GetRandomList();
     Selection selection(list);
+    vector<int> result = selection.Sort();
+    REQUIRE(ranges::is_sorted(result));
+}
+
+TEST_CASE("Merge")
+{
+    const vector<int> list = GetSimpleList();
+    Merge selection(list);
     vector<int> result = selection.Sort();
     REQUIRE(ranges::is_sorted(result));
 }
