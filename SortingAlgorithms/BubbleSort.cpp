@@ -2,9 +2,9 @@
 
 using namespace std;
 
-BubbleSort::BubbleSort(const vector<int>& array)
+BubbleSort::BubbleSort(const std::vector<int>& array)
+    : Sorter(array)
 {
-    array_ = array;
 }
 
 vector<int> BubbleSort::Sort()

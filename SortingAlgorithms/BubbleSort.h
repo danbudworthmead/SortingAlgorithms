@@ -2,12 +2,12 @@
 
 #include <vector>
 
-class BubbleSort
+#include "Sorter.h"
+
+class BubbleSort : public Sorter
 {
-    std::vector<int> array_;
-    
 public:
     explicit BubbleSort(const std::vector<int>& array);
     
-    std::vector<int> Sort();
+    std::vector<int> Sort() override;
 };
