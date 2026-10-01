@@ -1,7 +1,8 @@
 ﻿#include <algorithm>
 #include <catch2/catch_test_macros.hpp>
 
-#include "BubbleSort.h"
+#include "Bubble.h"
+#include "Insertion.h"
 
 using namespace std;
 namespace
@@ -16,12 +17,25 @@ namespace
         }
         return result;
     }
+    
+    vector<int> GetSimpleList()
+    {
+      return { 5, 4, 3, 2, 1 };  
+    };
 }
 
 TEST_CASE("Bubble")
 {
     const vector<int> list = GetRandomList();
-    BubbleSort bubble = BubbleSort(list);
+    Bubble bubble(list);
     vector<int> result = bubble.Sort();
+    REQUIRE(ranges::is_sorted(result));
+}
+
+TEST_CASE("Insertion")
+{
+    const vector<int> list = GetRandomList();
+    Insertion insertion(list);
+    vector<int> result = insertion.Sort();
     REQUIRE(ranges::is_sorted(result));
 }

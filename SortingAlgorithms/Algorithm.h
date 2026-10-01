@@ -2,11 +2,12 @@
 
 #include <vector>
 
-class Sorter
+class Algorithm
 {    
 public:
-    Sorter();
-    explicit Sorter(const std::vector<int>& array)
+    virtual ~Algorithm() = default;
+    Algorithm();
+    explicit Algorithm(const std::vector<int>& array)
     {
         array_ = array;
     }

@@ -1,13 +1,13 @@
-﻿#include <BubbleSort.h>
+﻿#include <Bubble.h>
 
 using namespace std;
 
-BubbleSort::BubbleSort(const std::vector<int>& array)
-    : Sorter(array)
+Bubble::Bubble(const std::vector<int>& array)
+    : Algorithm(array)
 {
 }
 
-vector<int> BubbleSort::Sort()
+vector<int> Bubble::Sort()
 {
     int num_swaps;
     do
